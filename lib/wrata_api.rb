@@ -37,6 +37,12 @@ module WrataApi
       end
     end
 
+    # @return [True, False] check if server execute some test
+    def executing_test?(server_name)
+      all_data = server_data(server_name)
+      all_data.key?('test')
+    end
+
     # Clear test in queue
     # @return [Nothing]
     def clear_tests_list
