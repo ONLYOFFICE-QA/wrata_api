@@ -33,6 +33,16 @@ module WrataApi
       perform_post(uri, body)
     end
 
+    # Add several tests to queue
+    # @param test_list [Array, String] tests to add
+    # @param options [Hash] option to each test
+    # @return [Nothing]
+    def add_tests_to_queue(test_list, options = {})
+      test_list.each do |current_test|
+        add_to_queue(current_test, options)
+      end
+    end
+
     # Change tests path, so it will be not relative to PC
     # @param test_path [String] string to clean
     # @return [String]
