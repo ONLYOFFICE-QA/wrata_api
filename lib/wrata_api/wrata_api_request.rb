@@ -12,7 +12,9 @@ module WrataApi
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Get.new(uri.request_uri, @header)
       request.set_form_data(body)
-      http.request(request).body
+      body = http.request(request).body
+      @logger.info("Request: #{uri} answered: #{body}")
+      body
     end
   end
 end
