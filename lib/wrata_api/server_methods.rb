@@ -1,6 +1,23 @@
 module WrataApi
   # Methods for getting server status
   module ServerMethods
+    # @return [Array, String] list of all servers
+    def servers
+      uri = URI.parse("#{@uri}/servers.json")
+      perform_get(uri)
+    end
+
+    # Got as much free servers as `count`
+    # @param count [Integer] how much servers to got
+    # @return [Array, Hash]
+    def free_servers(count)
+      free = []
+      servers.each do |single_server|
+        free << single_server if single_server['book_client_id'].nil?
+        return free if free.length == count
+      end
+    end
+
     # @return [Hash] Return servers data
     def server_data(server_name)
       uri = URI.parse("#{@uri}/runner/updated_data")

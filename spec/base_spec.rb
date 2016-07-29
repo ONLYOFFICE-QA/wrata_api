@@ -9,6 +9,14 @@ describe 'My behaviour' do
     expect(api.available?).to be_truthy
   end
 
+  it 'WrataApi#server' do
+    expect(api.servers).to be_a(Array)
+  end
+
+  it 'WrataApi#free_servers' do
+    expect(api.free_servers(5).length).to eq(5)
+  end
+
   it 'WrataApi#servers_data responded' do
     expect(api.server_data('nct-at-1')['name']).to eq('nct-at-1')
   end
