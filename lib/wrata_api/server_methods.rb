@@ -11,9 +11,9 @@ module WrataApi
     # @param count [Integer] how much servers to got
     # @return [Array, Hash]
     def free_servers(count)
-      free = []
+      free = ServerList.new(self)
       servers.each do |single_server|
-        free << single_server if single_server['book_client_id'].nil?
+        free.servers << single_server if single_server['book_client_id'].nil?
         return free if free.length == count
       end
     end
