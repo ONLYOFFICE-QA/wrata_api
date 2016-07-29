@@ -19,6 +19,14 @@ describe 'My behaviour' do
     expect(api.executing_test?('nct-at-2')).to be_falsey
   end
 
+  it 'WrataApi#unbook_server' do
+    expect(api.unbook_server('nct-at-1')).to be_a(Hash)
+  end
+
+  it 'WrataApi#book_server' do
+    expect(api.book_server('nct-at-1')).to be_a(Hash)
+  end
+
   it 'WrataApi#tests_in_queue is list' do
     expect(api.tests_in_queue).not_to be_empty
   end

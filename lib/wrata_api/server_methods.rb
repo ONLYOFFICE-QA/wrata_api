@@ -27,6 +27,20 @@ module WrataApi
       all_data.key?('test')
     end
 
+    # @param server_name [Server] server to unbook
+    # @return [Nothing]
+    def unbook_server(server_name)
+      uri = URI.parse("#{@uri}/queue/unbook_server")
+      perform_post(uri, 'server' => server_name)
+    end
+
+    # @param server_name [Server] server to book
+    # @return [Nothing]
+    def book_server(server_name)
+      uri = URI.parse("#{@uri}/queue/book_server")
+      perform_post(uri, 'server' => server_name)
+    end
+
     # Waiting until server have statue
     # @param server [String] name of server
     # @param status [Symbol] state to wait

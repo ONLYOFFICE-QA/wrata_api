@@ -5,6 +5,7 @@ require 'json'
 require 'logger'
 require 'uri'
 require 'yaml'
+# Mail module of gem
 module WrataApi
   # Class for working with wrata api
   class WrataApi

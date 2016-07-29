@@ -2,12 +2,17 @@ require 'net/http'
 module WrataApi
   # Module for describing base request actions
   module WrataApiRequest
+    # @return [Hash] default header for requests
     def default_header
       { 'Cookie' => "remember_token=#{@cookie}; \
                     _runner_session=#{@wrata_session}",
         'X-CSRF-Token' => @csrf_token }
     end
 
+    # Make get request
+    # @param uri [URI] uri wiht server
+    # @param body [Hash] body of request
+    # @return [JSON] result of request
     def perform_get(uri, body = {})
       @header ||= default_header
 
@@ -20,6 +25,10 @@ module WrataApi
       JSON.parse(body)
     end
 
+    # Make post request
+    # @param uri [URI] uri wiht server
+    # @param body [Hash] body of request
+    # @return [JSON] result of request
     def perform_post(uri, body = {})
       @header ||= default_header
 
