@@ -58,6 +58,25 @@ module WrataApi
       perform_post(uri, 'server' => server_name)
     end
 
+    # @param server_name [Server] server to power on
+    # @return [Nothing]
+    def power_on_server(server_name)
+      return if powering_status(server_name) == :on
+      uri = URI.parse("#{@uri}/servers/cloud_server_create")
+      perform_post(uri, 'server' => server_name)
+      wait_for_server_have_status(server_name, :on)
+    end
+
+    # @param server_name [Server] server to power on
+    # @return [Nothing]
+    def power_off_server(server_name)
+      return if powering_status(server_name) == :off
+      unbook_server(server_name)
+      uri = URI.parse("#{@uri}/servers/cloud_server_destroy")
+      perform_post(uri, 'server' => server_name)
+      wait_for_server_have_status(server_name, :off)
+    end
+
     # Waiting until server have statue
     # @param server [String] name of server
     # @param status [Symbol] state to wait

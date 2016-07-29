@@ -17,10 +17,6 @@ describe 'My behaviour' do
     expect(api.server_data('nct-at-1')['name']).to eq('nct-at-1')
   end
 
-  it 'WrataApi#powering_status return on' do
-    expect(api.powering_status('nct-at-1')).to eq(:on)
-  end
-
   it 'WrataApi#powering_status return off' do
     expect(api.powering_status('nct-at-2')).to eq(:off)
   end
@@ -35,6 +31,18 @@ describe 'My behaviour' do
 
   it 'WrataApi#book_server' do
     expect(api.book_server('nct-at-1')).to be_a(Hash)
+  end
+
+  it 'WrataAPI#power_on server' do
+    expect(api.power_on_server('nct-at-1')).to be_nil
+  end
+
+  it 'WrataApi#powering_status return on' do
+    expect(api.powering_status('nct-at-1')).to eq(:on)
+  end
+
+  it 'WrataAPI#power_off server' do
+    expect(api.power_off_server('nct-at-1')).to be_nil
   end
 
   it 'WrataApi#add_to_queue' do
