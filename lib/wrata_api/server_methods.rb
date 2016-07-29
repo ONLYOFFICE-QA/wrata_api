@@ -26,5 +26,22 @@ module WrataApi
       all_data = server_data(server_name)
       all_data.key?('test')
     end
+
+    # Waiting until server have statue
+    # @param server [String] name of server
+    # @param status [Symbol] state to wait
+    # @return [Nothing]
+    def wait_for_server_have_status(server, status)
+      current_wait_time = 0
+      loop do
+        return if powering_status(server) == status
+        @logger.info("Wait for state: #{status}: \
+                      #{current_wait_time} of: #{@waiting_timeout}")
+        sleep @between_request_timeout
+        current_wait_time += @between_request_timeout
+        raise "Couldn't wait until #{server} have status #{status} \
+               in specified timeout" if current_wait_time > @waiting_timeout
+      end
+    end
   end
 end
