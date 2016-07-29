@@ -18,9 +18,9 @@ module WrataApi
     end
 
     # @return [Hash] Return servers data
-    def servers_data
+    def server_data(server_name)
       uri = URI.parse("#{@uri}/runner/updated_data")
-      perform_get(uri)
+      perform_get(uri, 'servers[]' => server_name)
     end
 
     # Clear test in queue
