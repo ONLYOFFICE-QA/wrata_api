@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe 'My behaviour' do
+  test_file = "/home/lobashov-2/RubymineProjects/\
+              OnlineDocuments/spec/studio/run_test_single_spec.rb"
   let(:api) { WrataApi::WrataApi.new }
 
   it 'WrataApi#servers_data responded' do
@@ -27,7 +29,12 @@ describe 'My behaviour' do
     expect(api.book_server('nct-at-1')).to be_a(Hash)
   end
 
+  it 'WrataApi#add_to_queue' do
+    expect(api.add_to_queue(test_file)).to be_a(Hash)
+  end
+
   it 'WrataApi#tests_in_queue is list' do
+    api.add_to_queue(test_file)
     expect(api.tests_in_queue).not_to be_empty
   end
 
