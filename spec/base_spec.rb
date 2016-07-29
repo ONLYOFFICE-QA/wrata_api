@@ -5,6 +5,10 @@ describe 'My behaviour' do
               OnlineDocuments/spec/studio/run_test_single_spec.rb"
   let(:api) { WrataApi::WrataApi.new }
 
+  it 'WrataApi#available?' do
+    expect(api.available?).to be_truthy
+  end
+
   it 'WrataApi#servers_data responded' do
     expect(api.server_data('nct-at-1')['name']).to eq('nct-at-1')
   end

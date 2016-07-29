@@ -23,5 +23,18 @@ module WrataApi
       @waiting_timeout = 5 * 60
       @between_request_timeout = 10
     end
+
+    # @return [True, False] check if service is running
+    def available?
+      uri = URI("#{@uri}/signin")
+      begin
+        source = Net::HTTP.get(uri)
+      rescue StandardError
+        source = ''
+      end
+      available = source.include?('Runner')
+      @logger.info("wrata_available?(#{@uri}): #{available}")
+      available
+    end
   end
 end
