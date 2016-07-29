@@ -16,7 +16,11 @@ describe 'My behaviour' do
   end
 
   it 'WrataApi#execute_test is falsey' do
-    expect(api.executing_test?('nct-at-1')).to be_falsey
+    expect(api.executing_test?('nct-at-2')).to be_falsey
+  end
+
+  it 'WrataApi#tests_in_queue is list' do
+    expect(api.tests_in_queue).not_to be_empty
   end
 
   it 'WrataApi#clear_tests_list responded' do
