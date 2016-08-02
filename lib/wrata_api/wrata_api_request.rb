@@ -14,10 +14,8 @@ module WrataApi
     # @param body [Hash] body of request
     # @return [JSON] result of request
     def perform_get(uri, body = {})
-      @header ||= default_header
-
       http = Net::HTTP.new(uri.host, uri.port)
-      request = Net::HTTP::Get.new(uri.request_uri, @header)
+      request = Net::HTTP::Get.new(uri.request_uri, default_header)
       request.set_form_data(body)
       body = http.request(request).body
       @logger.info("Get request: #{uri} answered: #{body}")
@@ -30,10 +28,8 @@ module WrataApi
     # @param body [Hash] body of request
     # @return [JSON] result of request
     def perform_post(uri, body = {})
-      @header ||= default_header
-
       http = Net::HTTP.new(uri.host, uri.port)
-      request = Net::HTTP::Post.new(uri.request_uri, @header)
+      request = Net::HTTP::Post.new(uri.request_uri, default_header)
       request.set_form_data(body)
       http.read_timeout = 500
       body = http.request(request).body
