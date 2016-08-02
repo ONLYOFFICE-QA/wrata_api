@@ -40,7 +40,7 @@ module WrataApi
     # @return [True, False] is all servers powered on?
     def powered_on?
       @servers.each do |current|
-        return false if @api.powering_status(current['name']) == :off
+        return false unless @api.powering_status(current['name']) == :on
       end
       true
     end
@@ -56,7 +56,7 @@ module WrataApi
     # @return [True, False] is all servers powered on?
     def powered_off?
       @servers.each do |current|
-        return false if @api.powering_status(current['name']) == :on
+        return false unless @api.powering_status(current['name']) == :off
       end
       true
     end
