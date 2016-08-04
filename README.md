@@ -33,3 +33,7 @@ And use it like this:
 require 'wrata_api'
 WrataApi::WrataApi.new.servers
 ```
+
+## License
+
+gem-wrata_api is released under an GNU AGPL v3.0 license. See the LICENSE file for more information.
