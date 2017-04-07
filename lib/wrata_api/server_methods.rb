@@ -1,3 +1,4 @@
+require_relative 'server_methods/server_methods_exceptions'
 module WrataApi
   # Methods for getting server status
   module ServerMethods
@@ -12,6 +13,7 @@ module WrataApi
     # @return [Array, Hash]
     def free_servers(count)
       free = ServerList.new(self)
+      raise NotEnoughServerCount if count > servers.length
       servers.each do |single_server|
         free.servers << single_server if single_server['book_client_id'].nil?
         return free if free.length == count

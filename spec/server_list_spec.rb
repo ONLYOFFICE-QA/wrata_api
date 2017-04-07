@@ -31,4 +31,9 @@ describe 'ServerList' do
     @free_pcs.power_off
     expect(@free_pcs).to be_powered_off
   end
+
+  it 'Try to get free servers in great count' do
+    expect { @api.free_servers(1000) }
+      .to raise_error(WrataApi::NotEnoughServerCount)
+  end
 end
