@@ -23,7 +23,7 @@ module WrataApi
     # @return [Hash] Return servers data
     def server_data(server_name)
       uri = URI.parse("#{@uri}/runner/updated_data")
-      response = perform_get(uri, 'servers[]' => server_name)
+      response = perform_get(uri, 'servers' => [{ name: server_name }].to_json)
       response['servers_data'].first
     end
 
