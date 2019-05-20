@@ -31,9 +31,9 @@ module WrataApi
 
     # Power on all servers
     # @return [Nothing]
-    def power_on
+    def power_on(size = nil)
       concurrent_action do |server|
-        @api.power_on_server(server['name'])
+        @api.power_on_server(server['name'], size)
       end
     end
 

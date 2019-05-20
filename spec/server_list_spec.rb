@@ -15,8 +15,10 @@ describe 'ServerList' do
   end
 
   it 'ServerList poweron' do
-    @free_pcs.power_on
+    size_of_server = '2gb'
+    @free_pcs.power_on(size_of_server)
     expect(@free_pcs).to be_powered_on
+    expect(@free_pcs.servers.first['size']).to eq(size_of_server)
   end
 
   it 'ServerList book' do
