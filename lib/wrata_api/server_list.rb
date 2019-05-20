@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module WrataApi
   # Class for working with several servers at once
   class ServerList

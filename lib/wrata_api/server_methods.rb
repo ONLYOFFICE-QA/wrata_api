@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'server_methods/server_methods_exceptions'
 module WrataApi
   # Methods for getting server status
@@ -14,6 +16,7 @@ module WrataApi
     def free_servers(count)
       free = ServerList.new(self)
       raise NotEnoughServerCount if count > servers.length
+
       servers.each do |single_server|
         free.servers << single_server if single_server['book_client_id'].nil?
         return free if free.length == count
@@ -64,6 +67,7 @@ module WrataApi
     # @return [Nothing]
     def power_on_server(server_name, size = nil)
       return if powering_status(server_name) == :on
+
       uri = URI.parse("#{@uri}/servers/cloud_server_create")
       perform_post(uri, 'server' => server_name, 'size' => size)
       wait_for_server_have_status(server_name, :on)
@@ -73,6 +77,7 @@ module WrataApi
     # @return [Nothing]
     def power_off_server(server_name)
       return if powering_status(server_name) == :off
+
       unbook_server(server_name)
       uri = URI.parse("#{@uri}/servers/cloud_server_destroy")
       perform_post(uri, 'server' => server_name)
@@ -87,12 +92,15 @@ module WrataApi
       current_wait_time = 0
       loop do
         return if powering_status(server) == status
+
         @logger.info("Wait for state: #{status}: \
                       #{current_wait_time} of: #{@waiting_timeout}")
         sleep @between_request_timeout
         current_wait_time += @between_request_timeout
-        raise "Couldn't wait until #{server} have status #{status} \
-               in specified timeout" if current_wait_time > @waiting_timeout
+        if current_wait_time > @waiting_timeout
+          raise "Couldn't wait until #{server} have status #{status} \
+                 in specified timeout"
+        end
       end
     end
   end

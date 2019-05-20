@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/http'
 module WrataApi
   # Module for describing base request actions
@@ -20,6 +22,7 @@ module WrataApi
       body = http.request(request).body
       @logger.info("Get request: #{uri} answered: #{body}")
       return {} if body.empty?
+
       JSON.parse(body)
     end
 
@@ -35,6 +38,7 @@ module WrataApi
       body = http.request(request).body
       @logger.info("Post request: #{uri} answered: #{body}")
       return {} if body.empty?
+
       JSON.parse(body)
     end
   end
