@@ -62,10 +62,10 @@ module WrataApi
 
     # @param server_name [Server] server to power on
     # @return [Nothing]
-    def power_on_server(server_name)
+    def power_on_server(server_name, size = nil)
       return if powering_status(server_name) == :on
       uri = URI.parse("#{@uri}/servers/cloud_server_create")
-      perform_post(uri, 'server' => server_name)
+      perform_post(uri, 'server' => server_name, 'size' => size)
       wait_for_server_have_status(server_name, :on)
     end
 
