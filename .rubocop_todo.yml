@@ -42,22 +42,3 @@ Style/Encoding:
 Style/ExpandPathArguments:
   Exclude:
     - 'wrata_api.gemspec'
-
-# Offense count: 12
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, never
-Style/FrozenStringLiteralComment:
-  Exclude:
-    - 'Gemfile'
-    - 'lib/wrata_api.rb'
-    - 'lib/wrata_api/queue_methos.rb'
-    - 'lib/wrata_api/server_list.rb'
-    - 'lib/wrata_api/server_methods.rb'
-    - 'lib/wrata_api/server_methods/server_methods_exceptions.rb'
-    - 'lib/wrata_api/version.rb'
-    - 'lib/wrata_api/wrata_api_request.rb'
-    - 'spec/base_spec.rb'
-    - 'spec/server_list_spec.rb'
-    - 'spec/spec_helper.rb'
-    - 'wrata_api.gemspec'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'server_methods/server_methods_exceptions'
 module WrataApi
   # Methods for getting server status
