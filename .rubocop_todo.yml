@@ -13,13 +13,6 @@ Gemspec/RequiredRubyVersion:
   Exclude:
     - 'wrata_api.gemspec'
 
-# Offense count: 6
-# Cop supports --auto-correct.
-Layout/EmptyLineAfterGuardClause:
-  Exclude:
-    - 'lib/wrata_api/server_methods.rb'
-    - 'lib/wrata_api/wrata_api_request.rb'
-
 # Offense count: 2
 # Configuration parameters: CountComments, ExcludedMethods.
 # ExcludedMethods: refine
