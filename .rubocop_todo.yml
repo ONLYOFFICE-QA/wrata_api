@@ -36,9 +36,3 @@ Metrics/MethodLength:
 Style/Encoding:
   Exclude:
     - 'Gemfile'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/ExpandPathArguments:
-  Exclude:
-    - 'wrata_api.gemspec'
