@@ -91,8 +91,10 @@ module WrataApi
                       #{current_wait_time} of: #{@waiting_timeout}")
         sleep @between_request_timeout
         current_wait_time += @between_request_timeout
-        raise "Couldn't wait until #{server} have status #{status} \
-               in specified timeout" if current_wait_time > @waiting_timeout
+        if current_wait_time > @waiting_timeout
+          raise "Couldn't wait until #{server} have status #{status} \
+                 in specified timeout"
+        end
       end
     end
   end
