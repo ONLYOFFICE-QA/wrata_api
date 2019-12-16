@@ -2,12 +2,12 @@
 
 require 'spec_helper'
 
-describe 'My behaviour' do
+describe WrataApi::WrataApi do
   test_file = '/home/lobashov-2/RubymineProjects/'\
               'OnlineDocuments/spec/studio/run_test_single_spec.rb'
   server1 = 'wrata-staging-1'
   server2 = 'wrata-staging-2'
-  let(:api) { WrataApi::WrataApi.new }
+  let(:api) { described_class.new }
 
   it 'WrataApi#available?' do
     expect(api).to be_available

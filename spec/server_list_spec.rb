@@ -2,14 +2,14 @@
 
 require 'spec_helper'
 
-describe 'ServerList' do
+describe WrataApi::ServerList do
   before :all do
     @api = WrataApi::WrataApi.new
     @free_pcs = @api.free_servers(5)
   end
 
   it 'api.free_servers(5) object' do
-    expect(@free_pcs).to be_a(WrataApi::ServerList)
+    expect(@free_pcs).to be_a(described_class)
   end
 
   it 'api.free_servers(5) count' do
