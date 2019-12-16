@@ -3,6 +3,8 @@
 require 'spec_helper'
 
 describe WrataApi::ServerList do
+  size_of_server = '2gb'
+
   before :all do
     @api = WrataApi::WrataApi.new
     @free_pcs = @api.free_servers(5)
@@ -17,9 +19,11 @@ describe WrataApi::ServerList do
   end
 
   it 'ServerList poweron' do
-    size_of_server = '2gb'
     @free_pcs.power_on(size_of_server)
     expect(@free_pcs).to be_powered_on
+  end
+
+  it 'ServerList return correct size of server' do
     expect(@free_pcs.servers.first['size']).to eq(size_of_server)
   end
 
