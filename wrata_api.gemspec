@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = 'wrata_api'
   s.version = WrataApi::Version::STRING
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 1.9'
+  s.required_ruby_version = '>= 2.3'
   s.authors = ['ONLYOFFICE', 'Pavel Lobashov']
   s.summary = 'Wrata API Gem'
   s.description = 'Wrapper around wrata API'
