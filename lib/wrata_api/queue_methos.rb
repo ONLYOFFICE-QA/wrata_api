@@ -25,14 +25,24 @@ module WrataApi
     def add_to_queue(tests_to_add, options = {})
       uri = URI.parse("#{@uri}/queue/add_test")
 
-      options[:branch] ||= 'develop'
-      options[:location] ||= 'info us'
+      options = queue_item_default_values(options)
       body = {
         'test_path' => cleanup_test_path(tests_to_add),
         'branch' => options[:branch],
-        'location' => options[:location]
+        'location' => options[:location],
+        'browser' => options[:browser]
       }
       perform_post(uri, body)
+    end
+
+    # Add default value to queue item
+    # @param options [Hash] values for add to queue
+    # @return [Hash] after adding default
+    def queue_item_default_values(options)
+      options[:branch] ||= 'develop'
+      options[:location] ||= 'info us'
+      options[:browser] ||= 'default'
+      options
     end
 
     # Add several tests to queue
