@@ -12,3 +12,7 @@
 
 ### Fixes
 * Raise error (not show strange error) while trying to create a lot of server
+
+### Changes
+
+* Require ruby version >= 2.4
