@@ -3,6 +3,7 @@
 require_relative 'wrata_api/wrata_api_request'
 require_relative 'wrata_api/server_list'
 require_relative 'wrata_api/server_methods'
+require_relative 'wrata_api/file_tree'
 require_relative 'wrata_api/queue_methos'
 require 'json'
 require 'logger'
@@ -14,6 +15,7 @@ module WrataApi
   class WrataApi
     include WrataApiRequest
     include ServerMethods
+    include FileTreeMethods
     include QueueMethods
 
     def initialize
