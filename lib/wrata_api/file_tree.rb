@@ -5,7 +5,7 @@ module WrataApi
       uri = URI.parse("#{@uri}/runner/file_tree")
       body = {
           'project' => project,
-          'ref' => ref
+          'refs' => ref
       }
       perform_get(uri, body)
     end
