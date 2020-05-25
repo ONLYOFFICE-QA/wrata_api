@@ -15,7 +15,7 @@ module WrataApi
   class WrataApi
     include WrataApiRequest
     include ServerMethods
-    include FileTreeMethods
+    include FileListMethods
     include QueueMethods
 
     def initialize
