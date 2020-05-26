@@ -13,6 +13,7 @@
 * Add support of `codecov` and `simplecov`
 * Add `Rakefile` with default `spec` task
 * Increase code coverage
+* Add rake task to release gem on github and rubygems
 
 ### Fixes
 
