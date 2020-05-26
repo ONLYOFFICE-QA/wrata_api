@@ -11,11 +11,11 @@ module WrataApi
     end
 
     # Get list of tests in queue
-    # @return [Nothing]
+    # @return [Array<Hash>] test list data
     def tests_in_queue
       uri = URI.parse("#{@uri}/runner/updated_data")
       response = perform_get(uri)
-      response['queue_data']['tests'].map { |test| test['test_name'] }
+      response['queue_data']['tests']
     end
 
     # Add test to queue
@@ -30,7 +30,7 @@ module WrataApi
         'test_path' => tests_to_add,
         'branch' => options[:branch],
         'location' => options[:location],
-        'browser' => options[:browser]
+        'spec_browser' => options[:browser]
       }
       perform_post(uri, body)
     end
