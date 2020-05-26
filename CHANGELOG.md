@@ -4,6 +4,10 @@
 
 ## 0.1.1 (2020-05-26)
 
+### New Features
+
+* Add config to `markdownlint`
+
 ### Fixes
 
 * Fix pushing gem to github
