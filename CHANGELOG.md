@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.1.0 (2020-05-26)
+
 ### New Features
 
 * Ability to `power_on` servers with different size
