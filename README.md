@@ -1,6 +1,6 @@
-# gem-wrata-api
+# wrata-api
 
-Library for access API of [WRATA service](https://github.com/ONLYOFFICE/testing-wrata)
+Ruby Library for access API of [WRATA service](https://github.com/ONLYOFFICE/testing-wrata)
 Used in QA team of ONLYOFFICE
 
 ## Installation
