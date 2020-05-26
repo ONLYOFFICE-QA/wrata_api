@@ -18,3 +18,4 @@
 ### Changes
 
 * Require ruby version >= 2.4
+* Remove usage of `cleanup_test_path` while adding tests to queue

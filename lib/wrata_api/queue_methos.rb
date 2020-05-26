@@ -27,7 +27,7 @@ module WrataApi
 
       options = queue_item_default_values(options)
       body = {
-        'test_path' => cleanup_test_path(tests_to_add),
+        'test_path' => tests_to_add,
         'branch' => options[:branch],
         'location' => options[:location],
         'browser' => options[:browser]
@@ -53,14 +53,6 @@ module WrataApi
       test_list.each do |current_test|
         add_to_queue(current_test, options)
       end
-    end
-
-    # Change tests path, so it will be not relative to PC
-    # @param test_path [String] string to clean
-    # @return [String]
-    def cleanup_test_path(test_path)
-      part_after_root = test_path.split('RubymineProjects')[1]
-      "//home/ubuntu/RubymineProjects#{part_after_root}"
     end
   end
 end
