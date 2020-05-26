@@ -2,6 +2,16 @@
 
 ## master (unreleased)
 
+## 0.1.1 (2020-05-26)
+
+### New Features
+
+* Add config to `markdownlint`
+
+### Fixes
+
+* Fix pushing gem to github
+
 ## 0.1.0 (2020-05-26)
 
 ### New Features
