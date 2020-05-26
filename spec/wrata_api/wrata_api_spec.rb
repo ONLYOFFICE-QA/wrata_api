@@ -3,8 +3,6 @@
 require 'spec_helper'
 
 describe WrataApi::WrataApi do
-  test_file = '/home/lobashov-2/RubymineProjects/'\
-              'OnlineDocuments/spec/studio/run_test_single_spec.rb'
   server1 = 'wrata-staging-1'
   server2 = 'wrata-staging-2'
   let(:api) { described_class.new }
@@ -47,22 +45,5 @@ describe WrataApi::WrataApi do
 
   it 'WrataAPI#power_off server' do
     expect(api.power_off_server(server1)).to be_nil
-  end
-
-  it 'WrataApi#add_to_queue' do
-    expect(api.add_to_queue(test_file)).to be_a(Hash)
-  end
-
-  it 'WrataApi#add_tests_to_queue' do
-    expect(api.add_tests_to_queue([test_file])).to be_a(Array)
-  end
-
-  it 'WrataApi#tests_in_queue is list' do
-    api.add_to_queue(test_file)
-    expect(api.tests_in_queue).not_to be_empty
-  end
-
-  it 'WrataApi#clear_tests_list responded' do
-    expect(api.clear_tests_list).to be_a(Hash)
   end
 end
