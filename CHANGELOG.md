@@ -24,3 +24,4 @@
 * Require ruby version >= 2.4
 * Remove usage of `cleanup_test_path` while adding tests to queue
 * `WrataApi#tests_in_queue` return all test data, not just name
+* Cleanup `gemspec` file
