@@ -12,6 +12,7 @@
 * Add `WrataApi#add_to_queue` default value for `browser`
 * Add support of `codecov` and `simplecov`
 * Add `Rakefile` with default `spec` task
+* Increase code coverage
 
 ### Fixes
 

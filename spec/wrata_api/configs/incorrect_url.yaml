@@ -1,0 +1,4 @@
+cookie: xxx
+csrf_token: yyy
+uri: http://example.com
+wrata_session: zzz
