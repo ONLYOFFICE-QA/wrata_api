@@ -4,15 +4,15 @@ require 'spec_helper'
 
 describe WrataApi::ServerList do
   api = WrataApi::WrataApi.new
-  free_pcs = api.free_servers(5)
-  size_of_server = '2gb'
+  free_pcs = api.free_servers(2)
+  size_of_server = '1gb'
 
-  it 'api.free_servers(5) object' do
+  it 'api.free_servers(2) object' do
     expect(free_pcs).to be_a(described_class)
   end
 
-  it 'api.free_servers(5) count' do
-    expect(free_pcs.length).to eq(5)
+  it 'api.free_servers(2) count' do
+    expect(free_pcs.length).to eq(2)
   end
 
   it 'ServerList poweron' do
