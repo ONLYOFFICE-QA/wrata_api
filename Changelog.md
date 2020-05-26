@@ -10,6 +10,8 @@
 * Support of `rubocop-performance`
 * Update rubocop configs to `0.84.0`
 * Add `WrataApi#add_to_queue` default value for `browser`
+* Add support of `codecov` and `simplecov`
+* Add `Rakefile` with default `spec` task
 
 ### Fixes
 
