@@ -7,10 +7,6 @@ describe WrataApi::WrataApi do
   server2 = 'wrata-staging-2'
   let(:api) { described_class.new }
 
-  it 'WrataApi#available?' do
-    expect(api).to be_available
-  end
-
   it 'WrataApi#server' do
     expect(api.servers).to be_a(Array)
   end

@@ -18,8 +18,8 @@ module WrataApi
     include FileListMethods
     include QueueMethods
 
-    def initialize
-      config = YAML.load_file("#{ENV['HOME']}/.gem-wrata/config.yaml")
+    def initialize(config = nil)
+      config ||= YAML.load_file("#{ENV['HOME']}/.gem-wrata/config.yaml")
       @uri = config['uri']
       @cookie = config['cookie']
       @wrata_session = config['wrata_session']
