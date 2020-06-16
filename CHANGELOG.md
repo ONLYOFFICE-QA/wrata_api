@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New Features
+
+* Support of services with https
+
 ## 0.1.1 (2020-05-26)
 
 ### New Features
