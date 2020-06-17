@@ -10,8 +10,6 @@ group :test do
 end
 
 group :development do
-  gem 'overcommit'
-  gem 'rubocop', require: false
-  gem 'rubocop-performance', require: false
-  gem 'rubocop-rspec', require: false
+  gem 'overcommit', require: false
+  gem 'yard', require: false
 end
