@@ -7,7 +7,7 @@
 * Support of services with https
 * Add `markdown`, `rubocop` and `yard` coverage
   test via GitHub Actions
-* Add support of `rubocop-rake
+* Add support of `rubocop-rake`
 * `yard` as development dependency
 
 ### Changes
