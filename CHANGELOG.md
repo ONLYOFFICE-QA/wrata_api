@@ -5,6 +5,8 @@
 ### New Features
 
 * Support of services with https
+* Add `markdown`, `rubocop` and `yard` coverage 
+  test via GitHub Actions
 
 ## 0.1.1 (2020-05-26)
 
