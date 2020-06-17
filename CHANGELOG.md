@@ -7,6 +7,12 @@
 * Support of services with https
 * Add `markdown`, `rubocop` and `yard` coverage
   test via GitHub Actions
+* Add support of `rubocop-rake`
+
+### Changes
+
+* Freeze specific version of all `rubocop` extension
+  as development dependencies
 
 ## 0.1.1 (2020-05-26)
 
