@@ -5,6 +5,17 @@
 ### New Features
 
 * Support of services with https
+* Add `markdown`, `rubocop` and `yard` coverage
+  test via GitHub Actions
+* Add support of `rubocop-rake`
+* `yard` as development dependency
+
+### Changes
+
+* Freeze specific version of all `rubocop` extension
+  as development dependencies
+* `overcommit` now is not required as development dependency
+* Add missing documentation
 
 ## 0.1.1 (2020-05-26)
 
