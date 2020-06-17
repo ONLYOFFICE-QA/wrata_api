@@ -15,6 +15,7 @@
 * Freeze specific version of all `rubocop` extension
   as development dependencies
 * `overcommit` now is not required as development dependency
+* Add missing documentation
 
 ## 0.1.1 (2020-05-26)
 
