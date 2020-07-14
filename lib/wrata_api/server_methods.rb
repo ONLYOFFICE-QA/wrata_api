@@ -34,9 +34,10 @@ module WrataApi
     def powering_status(server_name)
       all_data = server_data(server_name)
       status = all_data['_status']
-      if status == 'created'
+      case status
+      when 'created'
         :on
-      elsif status == 'destroyed'
+      when 'destroyed'
         :off
       else
         :other
