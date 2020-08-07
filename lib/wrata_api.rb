@@ -24,7 +24,7 @@ module WrataApi
       @cookie = config['cookie']
       @wrata_session = config['wrata_session']
       @csrf_token = config['csrf_token']
-      @logger = Logger.new(STDOUT)
+      @logger = Logger.new($stdout)
       @waiting_timeout = 5 * 60
       @between_request_timeout = 10
     end
