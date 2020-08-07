@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Changes
+
+* Fix new warnings from `rubocop` v0.89.0 update
+
 ## 0.1.2 (2020-06-17)
 
 ### New Features
