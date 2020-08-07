@@ -11,9 +11,3 @@
 # ExcludedMethods: refine
 Metrics/BlockLength:
   Max: 30
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/GlobalStdStream:
-  Exclude:
-    - 'lib/wrata_api.rb'
