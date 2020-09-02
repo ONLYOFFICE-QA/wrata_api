@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New Features
+
+* Add method to get info about current profile
+
 ### Changes
 
 * Fix new warnings from `rubocop` v0.89.0 update
