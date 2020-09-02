@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.2.0 (2020-09-02)
+
 ### New Features
 
 * Add method to get info about current profile

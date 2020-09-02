@@ -4,6 +4,6 @@ module WrataApi
   # This module holds the WrataApi version information.
   module Version
     # @return [String] current gem version
-    STRING = '0.1.2'
+    STRING = '0.2.0'
   end
 end
