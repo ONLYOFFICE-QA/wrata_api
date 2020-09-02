@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'wrata_api/clients_methods'
 require_relative 'wrata_api/wrata_api_request'
 require_relative 'wrata_api/server_list'
 require_relative 'wrata_api/server_methods'
@@ -13,6 +14,7 @@ require 'yaml'
 module WrataApi
   # Class for working with wrata api
   class WrataApi
+    include ClientsMethods
     include WrataApiRequest
     include ServerMethods
     include FileListMethods
