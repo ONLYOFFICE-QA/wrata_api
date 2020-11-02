@@ -6,7 +6,7 @@ gemspec
 
 group :test do
   gem 'codecov', require: false
-  gem 'rspec', '~> 3.9.0'
+  gem 'rspec', '~> 3.10.0'
 end
 
 group :development do
