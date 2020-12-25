@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New Features
+
+* Add `dependabot` config
+
 ### Changes
 
 * Store frozen dependencies version in `Gemfile.lock`
