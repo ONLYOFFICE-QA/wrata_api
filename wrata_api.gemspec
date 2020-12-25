@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   }
   s.files = Dir['lib/**/*']
   s.license = 'AGPL-3.0'
-  s.add_development_dependency('codecov', '~> 13')
+  s.add_development_dependency('codecov', '~> 0')
   s.add_development_dependency('overcommit', '~> 0')
   s.add_development_dependency('rake', '~> 13')
   s.add_development_dependency('rspec', '~> 3')
