@@ -47,8 +47,9 @@ GEM
       unicode-display_width (>= 1.4.0, < 2.0)
     rubocop-ast (0.8.0)
       parser (>= 2.7.1.5)
-    rubocop-performance (1.7.1)
-      rubocop (>= 0.82.0)
+    rubocop-performance (1.9.1)
+      rubocop (>= 0.90.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     rubocop-rake (0.5.1)
       rubocop
     rubocop-rspec (1.43.2)
@@ -67,16 +68,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  codecov
-  overcommit
-  rake (~> 13.0)
-  rspec (~> 3.9.0)
-  rubocop (= 0.90.0)
-  rubocop-performance (= 1.7.1)
-  rubocop-rake (= 0.5.1)
-  rubocop-rspec (= 1.43.2)
+  codecov (~> 0)
+  overcommit (~> 0)
+  rake (~> 13)
+  rspec (~> 3)
+  rubocop (~> 0)
+  rubocop-performance (~> 1)
+  rubocop-rake (~> 0)
+  rubocop-rspec (~> 1)
   wrata_api!
-  yard
+  yard (>= 0.9.20)
 
 BUNDLED WITH
    2.1.4
