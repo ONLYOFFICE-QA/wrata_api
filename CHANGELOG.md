@@ -9,6 +9,7 @@
 ### Changes
 
 * Store frozen dependencies version in `Gemfile.lock`
+* Drop support of Ruby 2.4 since it's EOLed
 
 ## 0.2.0 (2020-09-02)
 
