@@ -107,7 +107,7 @@ module WrataApi
     # @return [String] error for server timeout
     def server_status_timeout_error(server, status)
       "Couldn't wait until #{server} have status "\
-      "#{status} in specified timeout"
+        "#{status} in specified timeout"
     end
   end
 end
