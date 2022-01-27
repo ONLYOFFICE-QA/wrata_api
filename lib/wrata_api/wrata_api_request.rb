@@ -7,7 +7,7 @@ module WrataApi
     # @return [Hash] default header for requests
     def default_header
       { 'Cookie' => "remember_token=#{@cookie}; \
-                    _runner_session=#{@wrata_session}",
+                    _runner_session=#{CGI.escape(@wrata_session)}",
         'X-CSRF-Token' => @csrf_token }
     end
 

@@ -6,6 +6,10 @@
 
 * Add `dependabot` config
 
+### Fixes
+
+* Fix compatibility with Rail v5.2 `use_authenticated_cookie_encryption`
+
 ### Changes
 
 * Store frozen dependencies version in `Gemfile.lock`
