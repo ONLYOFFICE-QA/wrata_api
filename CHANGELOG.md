@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New Features
+
+* Add `yamllint` check in CI
+
 ### Changes
 
 * Actualize `nodejs` version in CI
