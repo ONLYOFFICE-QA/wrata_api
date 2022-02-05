@@ -5,6 +5,7 @@
 ### New Features
 
 * Add `yamllint` check in CI
+* Add `CodeQL` check in CI
 
 ### Changes
 
