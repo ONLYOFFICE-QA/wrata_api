@@ -14,6 +14,8 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
     - uses: actions/setup-node@v1
+      with:
+        node-version: '16'
     - name: Check markdown files using `markdownlint`
       run: |
         npm install -g markdownlint-cli
