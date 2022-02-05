@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Changes
+
+* Actualize `nodejs` version in CI
+
 ## 1.0.0 (2022-01-28)
 
 ### New Features
