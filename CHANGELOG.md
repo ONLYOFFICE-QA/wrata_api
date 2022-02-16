@@ -10,6 +10,7 @@
 ### Changes
 
 * Actualize `nodejs` version in CI
+* Check `dependabot` at 8:00 Moscow time daily
 
 ## 1.0.0 (2022-01-28)
 
