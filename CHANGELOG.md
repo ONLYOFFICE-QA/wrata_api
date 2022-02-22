@@ -7,6 +7,10 @@
 * Add `yamllint` check in CI
 * Add `CodeQL` check in CI
 
+### Fixes
+
+* Fix `uninitialized constant WrataApi::WrataApiRequest::CGI` in rake tasks
+
 ### Changes
 
 * Actualize `nodejs` version in CI
