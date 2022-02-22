@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Fixes
+
+* Fix publishing gem on `GitHub Packages`
+
 ## 1.0.1 (2022-02-22)
 
 ### New Features
