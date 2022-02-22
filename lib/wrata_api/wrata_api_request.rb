@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'cgi'
 require 'net/http'
 module WrataApi
   # Module for describing base request actions
