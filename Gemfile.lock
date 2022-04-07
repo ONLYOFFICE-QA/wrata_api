@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    wrata_api (1.0.2)
+    wrata_api (1.1.0)
 
 GEM
   remote: https://rubygems.org/

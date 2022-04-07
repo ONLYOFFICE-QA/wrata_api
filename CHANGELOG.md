@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 1.1.0 (2022-04-07)
+
 ### Changes
 
 * `WrataApi#add_tests_to_queue` use new endpoint for faster adding tests
