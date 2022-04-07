@@ -12,7 +12,7 @@ describe WrataApi::WrataApi do
   end
 
   it 'WrataApi#add_tests_to_queue' do
-    expect(api.add_tests_to_queue([test_file])).to be_a(Array)
+    expect(api.add_tests_to_queue([test_file])).to be_a(Hash)
   end
 
   it 'WrataApi#tests_in_queue is list' do

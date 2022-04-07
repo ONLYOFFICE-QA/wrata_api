@@ -50,9 +50,16 @@ module WrataApi
     # @param options [Hash] option to each test
     # @return [Nothing]
     def add_tests_to_queue(test_list, options = {})
-      test_list.each do |current_test|
-        add_to_queue(current_test, options)
-      end
+      uri = URI.parse("#{@uri}/queue/add_tests")
+
+      options = queue_item_default_values(options)
+      body = {
+        'test_paths[]' => test_list,
+        'branch' => options[:branch],
+        'location' => options[:location],
+        'spec_browser' => options[:browser]
+      }
+      perform_post(uri, body)
     end
   end
 end
