@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe WrataApi::WrataApi do
-  test_file = '/home/lobashov-2/RubymineProjects/'\
+  test_file = '/home/lobashov-2/RubymineProjects/' \
               'OnlineDocuments/spec/studio/run_test_single_spec.rb'
   let(:api) { described_class.new }
 
