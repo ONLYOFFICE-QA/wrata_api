@@ -5,6 +5,7 @@
 ### Changes
 
 * Fix `rubocop-1.28.1` code issues
+* Drop `ruby-2.6` support since it's EOL'ed
 
 ## 1.1.0 (2022-04-07)
 
