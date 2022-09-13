@@ -25,11 +25,13 @@ describe WrataApi::ServerList do
   end
 
   it 'ServerList book' do
-    free_pcs.book
+    servers = free_pcs.book
+    expect(api.server_data(servers.first['name'])['booked']).not_to be_nil
   end
 
   it 'ServerList unbook' do
-    free_pcs.unbook
+    servers = free_pcs.unbook
+    expect(api.server_data(servers.first['name'])['booked']).to be_nil
   end
 
   it 'ServerList poweroff' do
