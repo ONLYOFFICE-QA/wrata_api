@@ -2,10 +2,14 @@
 
 ## master (unreleased)
 
+### New Features
+
+* Add `ruby-3.2` to CI
+
 ### Changes
 
 * Fix `rubocop-1.28.1` code issues
-* Drop `ruby-2.6` support since it's EOL'ed
+* Drop `ruby-2.6`, `ruby-2.7` support since it's EOL'ed
 
 ## 1.1.0 (2022-04-07)
 

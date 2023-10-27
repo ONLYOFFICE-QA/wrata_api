@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name = WrataApi::Name::STRING
   s.version = WrataApi::Version::STRING
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.7'
+  s.required_ruby_version = '>= 3.0'
   s.authors = ['ONLYOFFICE', 'Pavel Lobashov']
   s.email = %w[shockwavenn@gmail.com]
   s.summary = 'Wrata API Gem'
