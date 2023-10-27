@@ -8,7 +8,7 @@ jobs:
       - name: Set latest stable ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ruby
+          ruby-version: '3.2'
       - name: Setup ruby dependencies
         run: |
           gem install bundler
