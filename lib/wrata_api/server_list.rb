@@ -21,9 +21,8 @@ module WrataApi
     def concurrent_action
       splitted_servers = @servers.each_slice(@concurrent_operation_at_once).to_a
       splitted_servers.each do |each_slice|
-        threads = []
-        each_slice.each do |current_server|
-          threads << Thread.new(current_server) do
+        threads = each_slice.map do |current_server|
+          Thread.new(current_server) do
             yield(current_server)
           end
         end
