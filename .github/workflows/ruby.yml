@@ -21,8 +21,7 @@ jobs:
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
-          # Until https://github.com/ONLYOFFICE-QA/wrata_api/issues/342 is resolved
-          # bundle exec rake
+          bundle exec rake
       - uses: codecov/codecov-action@v4
         if: matrix.ruby == '3.3'
         with:
