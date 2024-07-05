@@ -20,6 +20,9 @@ module WrataApi
     include FileListMethods
     include QueueMethods
 
+    # @return [String] endpoint of API
+    attr_reader :uri
+
     def initialize(config = nil)
       config ||= YAML.load_file("#{Dir.home}/.gem-wrata/config.yaml")
       @uri = config['uri']
