@@ -8,8 +8,6 @@ GEM
   specs:
     ast (2.4.2)
     childprocess (5.0.0)
-    codecov (0.6.0)
-      simplecov (>= 0.15, < 0.22)
     diff-lcs (1.5.1)
     docile (1.4.0)
     iniparse (1.5.0)
@@ -67,6 +65,9 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
+    simplecov-cobertura (2.1.0)
+      rexml
+      simplecov (~> 0.19)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
     strscan (3.1.0)
@@ -77,7 +78,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  codecov (~> 0)
   overcommit (~> 0)
   rake (~> 13)
   rspec (~> 3)
@@ -85,8 +85,9 @@ DEPENDENCIES
   rubocop-performance (~> 1)
   rubocop-rake (~> 0)
   rubocop-rspec (~> 3)
+  simplecov-cobertura (~> 2)
   wrata_api!
   yard (>= 0.9.20)
 
 BUNDLED WITH
-   2.5.8
+   2.5.14

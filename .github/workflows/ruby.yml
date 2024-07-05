@@ -22,4 +22,10 @@ jobs:
           gem install bundler
           bundle install --jobs 4 --retry 3
           # Until https://github.com/ONLYOFFICE-QA/wrata_api/issues/342 is resolved
-          # bundle exec rake
+          rspec spec/wrata_api/wrata_api_available_spec.rb:11
+      - uses: codecov/codecov-action@v4
+        if: matrix.ruby == '3.3'
+        with:
+          fail_ci_if_error: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
