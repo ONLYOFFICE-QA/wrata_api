@@ -23,3 +23,9 @@ jobs:
           bundle install --jobs 4 --retry 3
           # Until https://github.com/ONLYOFFICE-QA/wrata_api/issues/342 is resolved
           # bundle exec rake
+      - uses: codecov/codecov-action@v4
+        if: matrix.ruby == '3.3'
+        with:
+          fail_ci_if_error: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

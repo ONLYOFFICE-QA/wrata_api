@@ -14,6 +14,7 @@
 * Fix `rubocop-1.63.1` code issues
 * Drop `ruby-2.6`, `ruby-2.7` support since it's EOL'ed
 * CI is run on all supported rubies
+* Migrate coverage report to `codecov v4`
 
 ## 1.1.0 (2022-04-07)
 

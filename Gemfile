@@ -5,8 +5,8 @@ source 'https://rubygems.org'
 gemspec
 
 group :test do
-  gem 'codecov', '~> 0', require: false
   gem 'rspec', '~> 3'
+  gem 'simplecov-cobertura', '~> 2'
 end
 
 group :development do
