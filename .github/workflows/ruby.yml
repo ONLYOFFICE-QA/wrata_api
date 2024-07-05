@@ -19,6 +19,7 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
       - name: Create stub configuration file
         run: |
+          mkdir -pv ~/.gem-wrata
           echo "login: rspec" > ~/.gem-wrata/config.yaml
           echo "cookie: rspec_cookie" >> ~/.gem-wrata/config.yaml
           echo "csrf_token: rspec_csrf_token" >> ~/.gem-wrata/config.yaml
