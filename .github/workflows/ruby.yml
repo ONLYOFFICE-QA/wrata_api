@@ -23,7 +23,7 @@ jobs:
           echo "login: rspec" > ~/.gem-wrata/config.yaml
           echo "cookie: rspec_cookie" >> ~/.gem-wrata/config.yaml
           echo "csrf_token: rspec_csrf_token" >> ~/.gem-wrata/config.yaml
-          echo "uri: rspec_uri" >> ~/.gem-wrata/config.yaml
+          echo "uri: https://rspec_uri.example.com" >> ~/.gem-wrata/config.yaml
           echo "wrata_session: rspec_wrata_session" >> ~/.gem-wrata/config.yaml
       - name: Build and test with Rake
         run: |
