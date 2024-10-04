@@ -7,6 +7,42 @@ describe WrataApi::WrataApi do
   server2 = 'wrata-staging-2'
   let(:api) { described_class.new }
 
+  before do
+    stub_request(:get, "#{api.uri}/servers.json")
+      .to_return(body: '["wrata-staging-1", "wrata-staging-2"]')
+
+    stub_request(:get, "#{api.uri}/runner/updated_data")
+      .to_return(body: '["servers_data": { "name": "wrata-staging-1"}, { "name": "wrata-staging-2"}]')
+
+    stub_request(:get, "#{api.uri}/server_data?name=#{server1}")
+      .to_return(body: '{"name": "wrata-staging-1"}')
+
+    stub_request(:get, "#{api.uri}/powering_status?name=#{server2}")
+      .to_return(body: '{"status": "off"}')
+
+    stub_request(:get, "#{api.uri}/executing_test?name=#{server2}")
+      .to_return(body: '{"executing": false}')
+
+    stub_request(:post, "#{api.uri}/servers/unbook")
+      .with(body: { name: server1 }.to_json)
+      .to_return(body: '{}')
+
+    stub_request(:post, "#{api.uri}/servers/book")
+      .with(body: { name: server1 }.to_json)
+      .to_return(body: '{}')
+
+    stub_request(:post, "#{api.uri}/servers/power_on")
+      .with(body: { name: server1 }.to_json)
+      .to_return(body: '{}')
+
+    stub_request(:get, "#{api.uri}/powering_status?name=#{server1}")
+      .to_return(body: '{"status": "on"}')
+
+    stub_request(:post, "#{api.uri}/servers/power_off")
+      .with(body: { name: server1 }.to_json)
+      .to_return(body: '{}')
+  end
+
   it 'WrataApi#server' do
     expect(api.servers).to be_a(Array)
   end

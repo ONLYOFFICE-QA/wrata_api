@@ -2,13 +2,31 @@
 
 require 'spec_helper'
 
-describe WrataApi::ServerList do
-  api = WrataApi::WrataApi.new
-  free_pcs = api.free_servers(2)
-  size_of_server = '1gb'
+describe WrataApi::WrataApi, '#server_list' do
+  let(:api) { described_class.new }
+  let(:free_pcs) { api.free_servers(2) }
+  let(:size_of_server) { '1gb' }
+
+  before do
+    stub_request(:get, "#{api.uri}/servers.json")
+      .to_return(body: '[{"name": "server1", "size": "1gb"}, {"name": "server2", "size": "1gb"}]')
+    stub_request(:post, "#{api.uri}/servers/power_on")
+      .with(body: { size: size_of_server }.to_json)
+      .to_return(body: '{"status": "powered_on"}')
+    stub_request(:get, "#{api.uri}/server_data?name=server1")
+      .to_return(body: '{"name": "server1", "booked": true}')
+    stub_request(:post, "#{api.uri}/servers/book")
+      .to_return(body: '{"servers": [{"name": "server1", "booked": true}]}')
+    stub_request(:post, "#{api.uri}/servers/unbook")
+      .to_return(body: '{"servers": [{"name": "server1", "booked": false}]}')
+    stub_request(:post, "#{api.uri}/servers/power_off")
+      .to_return(body: '{"status": "powered_off"}')
+    stub_request(:get, "#{api.uri}/servers/free?count=1000")
+      .to_return(status: 400, body: '{"error": "NotEnoughServerCount"}')
+  end
 
   it 'api.free_servers(2) object' do
-    expect(free_pcs).to be_a(described_class)
+    expect(free_pcs).to be_a(WrataApi::ServerList)
   end
 
   it 'api.free_servers(2) count' do
