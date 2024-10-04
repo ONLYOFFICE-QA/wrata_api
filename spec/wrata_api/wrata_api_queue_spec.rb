@@ -7,6 +7,17 @@ describe WrataApi::WrataApi do
               'OnlineDocuments/spec/studio/run_test_single_spec.rb'
   let(:api) { described_class.new }
 
+  before do
+    stub_request(:post, "#{api.uri}/queue/add_test")
+      .to_return(body: '{"login": "login_name"}')
+    stub_request(:post, "#{api.uri}/queue/add_tests")
+      .to_return(body: '{"login": "login_name"}')
+    stub_request(:get, "#{api.uri}/runner/updated_data")
+      .to_return(body: '{"queue_data": {"tests": [{"spec_browser": "default"}]}}')
+    stub_request(:post, "#{api.uri}/queue/clear_tests")
+      .to_return(body: '{}')
+  end
+
   it 'WrataApi#add_to_queue' do
     expect(api.add_to_queue(test_file)).to be_a(Hash)
   end
