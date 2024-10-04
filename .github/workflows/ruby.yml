@@ -17,12 +17,19 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
+      - name: Create stub configuration file
+        run: |
+          mkdir -pv ~/.gem-wrata
+          echo "login: rspec" > ~/.gem-wrata/config.yaml
+          echo "cookie: rspec_cookie" >> ~/.gem-wrata/config.yaml
+          echo "csrf_token: rspec_csrf_token" >> ~/.gem-wrata/config.yaml
+          echo "uri: https://rspec_uri.example.com" >> ~/.gem-wrata/config.yaml
+          echo "wrata_session: rspec_wrata_session" >> ~/.gem-wrata/config.yaml
       - name: Build and test with Rake
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
-          # Until https://github.com/ONLYOFFICE-QA/wrata_api/issues/342 is resolved
-          rspec spec/wrata_api/wrata_api_available_spec.rb:11
+          bundle exec rspec spec
       - uses: codecov/codecov-action@v4
         if: matrix.ruby == '3.3'
         with:
