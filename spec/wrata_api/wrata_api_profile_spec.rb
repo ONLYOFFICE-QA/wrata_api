@@ -8,7 +8,7 @@ describe WrataApi::WrataApi, '#profile' do
 
   before do
     stub_request(:get, "#{api.uri}/profile.json")
-      .to_return(status: 200, body: '{"login": "login_name"}', headers: {})
+      .to_return(body: '{"login": "login_name"}', headers: {})
   end
 
   it 'Profile data is returned' do
