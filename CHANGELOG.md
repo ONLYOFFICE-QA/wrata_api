@@ -16,6 +16,10 @@
 * CI is run on all supported rubies
 * Migrate coverage report to `codecov v4`
 
+### Fixes
+
+* Run `rubocop` in CI through `bundle exec`
+
 ## 1.1.0 (2022-04-07)
 
 ### Changes
